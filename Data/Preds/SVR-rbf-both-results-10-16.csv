@@ -1,0 +1,4 @@
+Target,P,P
+Statistic,RMSE MEAN,RMSE STD
+Feature Scaling,,
+Feature Standardization,0.90047024884376869,0.42464943260313653

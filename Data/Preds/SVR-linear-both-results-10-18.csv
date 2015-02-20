@@ -1,0 +1,5 @@
+Target,SOC,SOC
+Statistic,RMSE MEAN,RMSE STD
+Feature Scaling,,
+Feature Standardization,0.61887089625632319,0.3532462630848543
+Filter -> Standardize,0.55558032716316219,0.22932932209472787
