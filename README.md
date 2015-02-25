@@ -26,7 +26,7 @@ These files make up a most of my work for the Kaggle's [Africa Soil Property Pre
 * A home-brew filter/dim-reduction scheme that tried to find representative (by local auto-correlation) frequencies 
 * Transformations of the response 
 * log (w/ small translation because of negative values)
-* [inverse hyperbolic sine](http://mathworld.wolfram.com/InverseHyperbolicSine.html)
+* [Inverse hyperbolic sine](http://mathworld.wolfram.com/InverseHyperbolicSine.html)
 			
 #####Models/Function Classes:
 
