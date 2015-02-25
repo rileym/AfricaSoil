@@ -1,7 +1,7 @@
 #AfricaSoil
 
 
-These files make up a most of my work for the Kaggle's [Africa Soil Property Prediction Contest](https://www.kaggle.com/c/afsis-soil-properties). I didn't write the files with their presentation in mind, so they may seem messy to an outside mind. I ended up [placing tenth](https://www.kaggle.com/c/afsis-soil-properties/leaderboard) of of about one thousand competitors.
+These files make up a most of my work for the Kaggle's [Africa Soil Property Prediction Contest](https://www.kaggle.com/c/afsis-soil-properties). I didn't write the files with their presentation in mind, so they may seem messy to an outside mind. I ended up [placing tenth](https://www.kaggle.com/c/afsis-soil-properties/leaderboard) of about one thousand competitors.
 
 -note structure of repository
 -soilClean
@@ -29,7 +29,8 @@ These files make up a most of my work for the Kaggle's [Africa Soil Property Pre
 * log (w/ small translation because of negative values)
 * [inverse hyperbolic sine](http://mathworld.wolfram.com/InverseHyperbolicSine.html)
 			
-* Models/Function Classes:
+####Models/Function Classes:
+
  * Linear:
   * Lasso
   * Ridge
