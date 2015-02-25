@@ -1,8 +1,7 @@
 #AfricaSoil
 
 
-These files make up a most of my work for the Kaggle's [Africa Soil Property Prediction Contest](https://www.kaggle.com/c/afsis-soil-properties). I didn't write the files with their presentation in mind, so they may seem messy to an outside mind. I ended up [placing tenth](https://www.kaggle.com/c/afsis-soil-properties/leaderboard) of about one thousand competitors.
-
+These files make up a most of my work for the Kaggle's [Africa Soil Property Prediction Contest](https://www.kaggle.com/c/afsis-soil-properties). I ended up [placing tenth](https://www.kaggle.com/c/afsis-soil-properties/leaderboard). I didn't write the files with their presentation in mind, so they may seem messy to an outside mind. To view an IPython notebook (.ipynb), use [nbviewer](http://nbviewer.ipython.org/github/rileym/AfricaSoil/tree/master/).
 -note structure of repository
 -soilClean
 -soilTune
@@ -29,7 +28,7 @@ These files make up a most of my work for the Kaggle's [Africa Soil Property Pre
 * log (w/ small translation because of negative values)
 * [inverse hyperbolic sine](http://mathworld.wolfram.com/InverseHyperbolicSine.html)
 			
-####Models/Function Classes:
+#####Models/Function Classes:
 
  * Linear:
   * Lasso
@@ -43,7 +42,7 @@ These files make up a most of my work for the Kaggle's [Africa Soil Property Pre
  * GBM
  * kNN (After dim-reduction)
 			
-* Post-processing:
+#####Post-processing:
  * Before scoring
   * Inverse transformations of the response (if transformed originally)
   * Truncation at max or min values
