@@ -22,31 +22,31 @@ These files make up a most of my work for the Kaggle's [Africa Soil Property Pre
 
 #####Preprocessing:
 
- *Standardization of the input
- *Correlation filtering on the input (at different levels, in combination with standardization)
- *A home-brew filter/dim-reduction scheme that tried to find representative (by local auto-correlation) frequencies 
- *Transformations of the response 
- *log (w/ small translation because of negative values)
- *[inverse hyperbolic sine](http://mathworld.wolfram.com/InverseHyperbolicSine.html)
+*Standardization of the input
+*Correlation filtering on the input (at different levels, in combination with standardization)
+*A home-brew filter/dim-reduction scheme that tried to find representative (by local auto-correlation) frequencies 
+*Transformations of the response 
+*log (w/ small translation because of negative values)
+*[inverse hyperbolic sine](http://mathworld.wolfram.com/InverseHyperbolicSine.html)
 			
-Models/Function Classes:
- Linear:
+*Models/Function Classes:
+ *Linear:
   *Lasso
   *Ridge
   *Elastic Net
   *Supervised Principle Components
   *Fussed Lasso
 		
- Non-linear:
-  *SVM (Regression, with kernels)
-  *GBM
-  *kNN (After dim-reduction)
+*Non-linear:
+ *SVM (Regression, with kernels)
+ *GBM
+ *kNN (After dim-reduction)
 			
-Post-processing:
- (Before scoring)
+*Post-processing:
+ *Before scoring
   *Inverse transformations of the response (if transformed originally)
   *Truncation at max or min values
- (After scoring)
+ *After scoring
   *Model averaging (didn't get to a full meta model)
 
 
