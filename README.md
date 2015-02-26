@@ -1,22 +1,22 @@
 #AfricaSoil
 
-Here is an of archive some of my work for the Kaggle's [Africa Soil Property Prediction Contest](https://www.kaggle.com/c/afsis-soil-properties). The files are in more or less the same state as they were the day the competition ended. I [placed tenth](https://www.kaggle.com/c/afsis-soil-properties/leaderboard). 
+This is an of archive some of my work for the Kaggle's [Africa Soil Property Prediction Contest](https://www.kaggle.com/c/afsis-soil-properties). The files are in more or less the same state as they were the day the competition ended. I [placed tenth](https://www.kaggle.com/c/afsis-soil-properties/leaderboard). 
 
 You can view an IPython notebook file (.ipynb) through [nbviewer](http://nbviewer.ipython.org/github/rileym/AfricaSoil/tree/master/).
 
-####Overview of competition:
+####Overview of Competition
 
  The goal of the competition was to predict five (real valued) characteristics of a soil sample from that sample's IR spectroscopy measurements. In simplified terms, the competition is five separate (or at least I chose too treat each response separately) regression problems.
 	
-####The predictor variables:
+####The Predictor Variables
 
- * The features are split between spectral data (the large majority of the features) and background data (about location, soil depth, etc.)
+ * The features are split between spectral data (the large majority of the features) and background data (recording location, soil depth, etc.)
  * The spectral data is high dimensional
  * The spectral data is functional data, and therefore there's lots of autocorrelation
 
-####What I tried:
+####What I Tried
 
-#####Preprocessing:
+#####Preprocessing
 
 * Standardization of the input
 * Correlation filtering on the input
@@ -25,7 +25,7 @@ You can view an IPython notebook file (.ipynb) through [nbviewer](http://nbviewe
  * Log 
  * [Inverse hyperbolic sine](http://mathworld.wolfram.com/InverseHyperbolicSine.html)
 			
-#####Models/Function Classes:
+#####Models/Function Classes
 
  * Linear:
   * Lasso
@@ -39,7 +39,7 @@ You can view an IPython notebook file (.ipynb) through [nbviewer](http://nbviewe
  * GBM
  * kNN (After dim-reduction)
 			
-#####Post-processing:
+#####Post-processing
  * Before scoring
   * Inverse transformations of the response (if transformed originally)
   * Truncation at max or min values
@@ -47,7 +47,7 @@ You can view an IPython notebook file (.ipynb) through [nbviewer](http://nbviewe
   * Model averaging (ran out of time before I could build a proper meta-model)
 
 
-####What worked:
+####What Worked
 
 As one would expect, different combinations of approaches worked to different effect on the different response variables. In the end ridge regression and support vector regression performed best.
 
