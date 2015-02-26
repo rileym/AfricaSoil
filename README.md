@@ -6,13 +6,13 @@ You can view an IPython notebook file (.ipynb) through [nbviewer](http://nbviewe
 
 ####Overview of competition:
 
- The goal of the competition was to predict five (real valued) characteristics of a soil sample from that sample's infrared spectroscopy measurements. In simplified terms, the competition is five separate (or at least I chose too treat each response separately) regression problems.
+ The goal of the competition was to predict five (real valued) characteristics of a soil sample from that sample's IR spectroscopy measurements. In simplified terms, the competition is five separate (or at least I chose too treat each response separately) regression problems.
 	
-####Observations about the dataset:
+####The predictor variables:
 
- * The data is high dimensional
- * It is split between spectral data and background data (about location, soil depth, etc.)
- * The spectral data is functional data, and so lots of autocorrelation
+ * The features are split between spectral data (the large majority of the features) and background data (about location, soil depth, etc.)
+ * The spectral data is high dimensional
+ * The spectral data is functional data, and therefore there's lots of autocorrelation
 
 ####What I tried:
 
@@ -30,9 +30,9 @@ You can view an IPython notebook file (.ipynb) through [nbviewer](http://nbviewe
  * Linear:
   * Lasso
   * Ridge
-  * Elastic Net
+  * Elastic-Net
   * Supervised Principle Components
-  * Fussed Lasso
+  * Fussed Lasso -- I had high hopes for this one! :'-(
 		
 * Non-linear:
  * SVM (Regression, with kernels)
@@ -44,16 +44,16 @@ You can view an IPython notebook file (.ipynb) through [nbviewer](http://nbviewe
   * Inverse transformations of the response (if transformed originally)
   * Truncation at max or min values
  * After scoring
-  * Model averaging (didn't get to a full meta model)
+  * Model averaging (ran out of time before I could build a proper meta-model)
 
 
 ####What worked:
 
-As one would expect, different approaches and models worked to different effect on the different response variables. In the end ridge regression and support vector regression performed best.
+As one would expect, different combinations of approaches worked to different effect on the different response variables. In the end ridge regression and support vector regression performed best.
 
-* Ridge regression was relatively successful in predicting all the response variables; ridge regression models with various preprocessing and post processing procedures were weighted into the final predictions for every response variable. For a few (not all) of the response variables, correlation filtering in combination with ridge regression significantly improved the generalization error. The degree of that improvement was sensitive to the level of filtering, so I tuned the level where appropriate. 
-* Support vector regression models with various kernels were successful with some but not all of the response variables.
-* Certain response benefitted from log transformations or inverse hyperbolic sine (and their corresponding inverse transformation before scoring in the CV)
-* A couple of the response variables seemed to have a natural minimum value, and performance improved when I truncated the predictions at that natural minimum. I only thought of this at the last minute, so while I truncated the relevant predictions and saw improvement, ideally I would have incorporated the truncation into the CV process, since 
-* The `P` response variable was by bar the hardest to predict. I imagine that the final rankings in the competition track how well `P` was predicted. The distribution of the `P` values was very skewed, with most values clustered near a minimum value, and a few samples sprinkled in a couple orders of magnitude larger. So the challenge was to predict this outliers, or at least minimize the loss.
+* Ridge regression was relatively successful in predicting all the response variables; ridge regression models with various preprocessing and post processing procedures were weighted into the final predictions for every response variable. For a few (not all) of the response variables, correlation filtering in combination with ridge regression significantly improved the generalization error. The degree of that improvement was sensitive to the level of filtering, and I tuned that level where appropriate. 
+* Support vector regression models with various kernels were relatively successful in predicting some but not all of the response variables.
+* Certain response variables benefitted from log transformations or inverse hyperbolic sine transformations (and their associated inverse transformations *before* scoring in the CV)
+* A couple of the response variables seemed to have a natural minimum value, and performance improved when I truncated the predictions at that natural minimum. I only thought of this at the last minute, so while I truncated the relevant predictions and saw improvement, ideally I would have incorporated the truncation into the CV process, since the optimal parameters might well be different when the predictions are truncated.
+* The `P` response variable was by bar the hardest to predict. I imagine that the final rankings in the competition track the degree to which a contestant predicted `P`. The distribution of the `P` values was very skewed, with most values clustered near a minimum value, while a few samples reached values some order of magnitude larger. So the challenge was to predict this outliers, or at least minimize the loss.
 * Probably *because* of `P`'s long tail and unpredictability it was particularly important to ignore the public leaderboard and trust the internal CV scores. The public leaderboard was calculated on a small part of the hold-out set about a tenth the size of the training data. Thus a good or bad score on the public leaderboard was very sensitive to whether one's model missed a very small number of outlying `P` observations that happen to be in that particular subsection of the hold-out set.
