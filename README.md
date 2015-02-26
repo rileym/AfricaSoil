@@ -1,11 +1,12 @@
 #AfricaSoil
 
+Here is an of archive some of my work for the Kaggle's [Africa Soil Property Prediction Contest](https://www.kaggle.com/c/afsis-soil-properties). The files are in more or less the same state as they were the day the competition ended. I [placed tenth](https://www.kaggle.com/c/afsis-soil-properties/leaderboard). 
 
-These files make archive most of my work for the Kaggle's [Africa Soil Property Prediction Contest](https://www.kaggle.com/c/afsis-soil-properties). I ended up [placing tenth](https://www.kaggle.com/c/afsis-soil-properties/leaderboard). I didn't write the files with their presentation in mind. To view an IPython notebook (.ipynb), use [nbviewer](http://nbviewer.ipython.org/github/rileym/AfricaSoil/tree/master/). 
+You can view an IPython notebook file (.ipynb) through [nbviewer](http://nbviewer.ipython.org/github/rileym/AfricaSoil/tree/master/).
 
 ####Overview of competition:
 
- The goal of the competition was to predict the level soil sample's  of five different soil characteristics using the infrared spectroscopy measurements. In simplified terms, the competition is five separate (or at least I chose too treat each response separately) regression problems.
+ The goal of the competition was to predict five (real valued) characteristics of a soil sample from that sample's infrared spectroscopy measurements. In simplified terms, the competition is five separate (or at least I chose too treat each response separately) regression problems.
 	
 ####Observations about the dataset:
 
