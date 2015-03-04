@@ -44,7 +44,7 @@ You can view an IPython notebook file (.ipynb) through [nbviewer](http://nbviewe
   * Inverse transformations of the response (if transformed originally)
   * Truncation at max or min values
  * After scoring
-  * Model averaging (ran out of time before I could build a proper meta-model)
+  * Model averaging (I did not get a change to could build a proper meta-model)
 
 
 ####What Worked & General Observations
