@@ -2,7 +2,7 @@
 
 This repository archives of my work for the Kaggle's [Africa Soil Property Prediction Contest](https://www.kaggle.com/c/afsis-soil-properties). The files are in more or less the same state as they were the day the competition ended. I [placed tenth](https://www.kaggle.com/c/afsis-soil-properties/leaderboard). 
 
-You can view an IPython notebook file (.ipynb) through [nbviewer](http://nbviewer.ipython.org/github/rileym/AfricaSoil/tree/master/).
+**You can view an IPython notebook file (.ipynb) through [nbviewer](http://nbviewer.ipython.org/github/rileym/AfricaSoil/tree/master/).**
 
 ####Overview of Competition
 
